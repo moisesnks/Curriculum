@@ -20,7 +20,7 @@ function animateProgressBar(progressBar, targetPercentage) {
             currentPercentage++;
             progressBar.style.background = `
             radial-gradient(closest-side, var(--bgray) 79%, transparent 90% 100%),
-            conic-gradient(var(--eggplant) ${currentPercentage}%, var(--dimgray) 0)   
+            conic-gradient(var(--pearl) ${currentPercentage}%, var(--dimgray) 0)   
             `;
         }
     }, animationInterval);
