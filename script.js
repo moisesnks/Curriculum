@@ -26,23 +26,9 @@ function animateProgressBar(progressBar, targetPercentage) {
     }, animationInterval);
 }
 
-
-// Obtener todas las barras de progreso
-const barrasDeProgreso = document.querySelectorAll('.contactoInfo.lenguajes .bar');
-
-barrasDeProgreso.forEach(barra => {
-    const valorTexto = barra.textContent; // Obtener el valor del porcentaje como texto
-    const porcentaje = parseInt(valorTexto); // Convertir el valor a un número entero
-
-    console.log(porcentaje);
-
-    const barraDiv = barra.nextElementSibling; // Obtener el div de la barra
-    animarBarra(barraDiv, porcentaje); // Animar la barra
-});
-
 function animarBarra(barraDiv, porcentaje) {
     let porcentajeActual = 0;
-    const duracionAnimacion = 500; // milisegundos
+    const duracionAnimacion = 750; // milisegundos
     const intervaloAnimacion = duracionAnimacion / porcentaje;
 
     const intervaloId = setInterval(() => {
@@ -54,4 +40,17 @@ function animarBarra(barraDiv, porcentaje) {
         }
     }, intervaloAnimacion);
 }
+
+// Obtener todas las barras de progreso
+const barrasDeProgreso = document.querySelectorAll('.contactoInfo.lenguajes .bar');
+
+barrasDeProgreso.forEach(barra => {
+    const valorTexto = barra.textContent; 
+    const porcentaje = parseInt(valorTexto); 
+
+    const liElement = barra.parentElement; 
+    const barraDiv = liElement.querySelector('div');
+
+    animarBarra(barraDiv, porcentaje); 
+});
 
